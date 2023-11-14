@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="sources/comp.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="sources/comp.ico" type="image/x-icon">
+  <script src="scripts/transform-function.js"></script>
+  <script>
+    window.onload = function() {
+      adaptiveSizePageScaleInit(300);
+    };
+    </script>
+  <style>
+    .Mainwindow {
+      width: 100vw;
+      height: 400vh;
+      position: fixed;
+      background: #171717;
+    }
+
+    .WelcomeText {
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-size: 36px;
+      font-family: "Akshar";
+      font-weight: 700;
+      word-wrap: break-word;
+      position: absolute;
+      top: 140px;
+      left: 0%;
+      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    }
+
+    .First-rectangle {
+      position: absolute;
+      width: 1200px;
+      height: 374px;
+      left: 9px;
+      top: 200px;
+      background-color: rgba(0, 145, 155, 0.993);
+      overflow: hidden;
+      border-radius: 20px;
+      border: 7px solid white;
+    }
+
+    .Second-rectangle {
+      position: absolute;
+      width: 1200px;
+      height: 374px;
+      right: 9px;
+      top: 600px;
+      background-color: rgba(0, 145, 155, 0.993);
+      overflow: hidden;
+      border-radius: 20px;
+      border: 7px solid white;
+    }
+    
+    .InfoText{
+      width: 100%;
+      text-align: justify;
+      color: white;
+      font-size: 24px;
+      font-weight: 700px;
+      font-family: "Akshar";
+      word-wrap: break-word;
+      position: relative;
+      left: 40%;
+    }
+
+    .ConfiguratorInfoText {
+      max-width: 750px;
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      font-weight: 700px;
+      font-family: "Akshar";
+      overflow-wrap: break-word;
+      position: relative;
+      right: -20px;
+      top: 25%;
+    }
+
+
+    .Mainnav {
+      width: 100vw;
+      height: 130px;
+      background: rgba(0, 145, 155, 0.993);
+    }
+
+    .Bottomnav {
+      width: 100vw;
+      height: 1px;
+      list-style-type: none;
+      list-style-position: inside;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -50px; /* Регулируйте отступ сверху в зависимости от высоты Mainnav */
+      margin-left: 36%;
+    }
+
+    .Bottomnav ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
+
+    .Bottomnav li a:hover {
+      color: white;
+    }
+
+    .Mainnav a:hover {
+      color: white;
+    }
+
+    .Bottomnav li {
+      margin: 0 10px;
+      font-family: "Akshar";
+      font-size: 24px;
+      font-weight: 700;
+      list-style-type: none;
+      margin-right: 15px;
+      text-align: right;
+    }
+
+    .Line {
+      width: 100vw;
+      height: 0px;
+      top: 46px;
+      position: fixed;
+      border: 2px white solid;
+    }
+
+    .ContactLink {
+      position: fixed;
+      top: 15px;
+      right: 115px;
+      width: 110px;
+      height: 30px;
+      color: black;
+      font-size: 22px;
+      font-family: "Akshar";
+      font-weight: 700;
+      word-wrap: break-word;
+    }
+
+    .PhoneNumber {
+      width: 210px;
+      height: 30px;
+      left: 1px;
+      top: 15px;
+      position: fixed;
+      color: black;
+      font-size: 24px;
+      font-family: "Akshar";
+      font-weight: 700;
+      word-wrap: break-word;
+    }
+
+    .AboutLink {
+      position: fixed;
+      top: 15px;
+      right: 0;
+      width: 100px;
+      height: 30px;
+      color: black;
+      font-size: 22px;
+      font-family: "Akshar";
+      font-weight: 700;
+      word-wrap: break-word;
+    }
+
+    .Logo1 {
+      position: absolute;
+      width: 250px;
+      height: 150px;
+      left: 10px;
+      top: 25px;
+    }
+
+    .slider {
+      background-color: #171717;
+      position: absolute;
+      width: 400px;
+      height: 376px;
+      overflow: hidden;
+      display: inherit;
+      margin-top: 56px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 6px solid white;
+      border-radius: 20px; 
+  }
+
+    .middle {
+      position: absolute;
+      top: 35%;
+      left: 202px;
+      transform: translate(-50%, -50%);
+    }
+
+    .navigation {
+      position: fixed;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+    }
+
+    .bar {
+      position: relative;
+      bottom: 15px;
+      height: 8px;
+      width: 30px;
+      margin: 6px;
+      cursor: pointer;
+      background-color: #ddd;
+      opacity: .7;
+      border-radius: 10px;
+      transition: all .4s ease;
+    }
+
+    .bar:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    input[name="r"] {
+      position: fixed;
+      visibility: hidden;
+    }
+
+    .slides {
+      width: 400%;
+      height: 100%;
+      display: flex;
+      position: relative;
+    }
+
+    .slide {
+      width: 25%;
+      transition: all .6s ease;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .slide img {
+      width: 80%;
+      height: 60%;
+      margin-top: 15%;
+      margin-left: 10px;
+    }
+
+    #r1:checked ~ .s1 {
+      margin-left: 0;
+    }
+
+    #r2:checked ~ .s1 {
+      margin-left: -25%;
+    }
+
+    #r3:checked ~ .s1 {
+      margin-left: -50%;
+    }
+
+    #r4:checked ~ .s1 {
+      margin-left: -75%;
+    }
+
+    .slide-content {
+      position: absolute;
+      bottom: 20px;
+      width: 270px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px;
+      border-radius: 40px;
+    }
+
+    .PcDesc{
+      color: white;
+      font-size: 20px;
+      font-family: "Akshar";
+      font-weight: 700;
+      text-align: center;
+    }
+    .ConfigPic{
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+    .ConfigPic img{
+      width: 400px;
+      height: 400px;
+      border-radius: 10%;
+    }
+  </style>
+</head>
+<body>
+  <div class="Mainwindow">
+    <div class="Mainnav">
+      <div class="Line"></div>
+      <a href="contacts.html" class="ContactLink">Контакты</a>
+      <div class="PhoneNumber">+7(4232)41-06-94</div>
+      <a href="aboutus.html" class="AboutLink">О нас</a>
+      <div class="Logo">
+        <img class="Logo1" src="sources/PClogo.png" />
+      </div>
+    </div>
+    <div class="Bottomnav">
+      <ul>
+        <li><a href="https://example.com">Новости</a></li>
+        <li><a href="https://google.com">Группа Вконтакте</a></li>
+        <li><a href="https://stackoverflow.com">Конфигуратор</a></li>
+      </ul>
+    </div>
+    <div class="WelcomeText">Наши авторские компьютерные решения</div>
+  <div class="First-rectangle">
+    <p class="InfoText">Тестовый текст в пару строк АОАОАОАОАОАОААО</p>
+    <div class="slider middle">
+      <div class="slides">
+        <input type="radio" name="r" id="r1" checked>
+        <input type="radio" name="r" id="r2">
+        <input type="radio" name="r" id="r3">
+        <input type="radio" name="r" id="r4">
+        <div class="slide s1">
+          <img src="sources/ComputerPlaceHolder.png" a href="https://example.com"></a>
+          <div class="slide-content">
+            <p class="PcDesc">Офисное решение</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="sources/ComputerPlaceHolder.png" alt="">
+          <div class="slide-content">
+            <p class="PcDesc">Решение для дома</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="sources/ComputerPlaceHolder.png" alt="">
+          <div class="slide-content">
+            <p class="PcDesc">Профессиональное решение</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="sources/ComputerPlaceHolder.png" alt="">
+          <div class="slide-content">
+            <p class="PcDesc">Решение для Игр</p>
+          </div>
+        </div>
+      </div>
+      <div class="navigation">
+        <label for="r1" class="bar"></label>
+        <label for="r2" class="bar"></label>
+        <label for="r3" class="bar"></label>
+        <label for="r4" class="bar"></label>
+      </div>
+      <div class="prev-next">
+        <label for="r1" class="prev"></label>
+        <label for="r4" class="next"></label>
+      </div>
+    </div>
+    </div>
+  <div class="Second-rectangle">
+    <p class="ConfiguratorInfoText">Наш Сайт предлагает вам возможность создать свою конфигурацию компьютера под ваши нужды. В вашем распоряжении будет удобный инструментарий, который подберет только совместимые комплектующие</p>
+    <div class="ConfigPic"><a href="https://google.com"><img src="sources/configurator.jpg"></a>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

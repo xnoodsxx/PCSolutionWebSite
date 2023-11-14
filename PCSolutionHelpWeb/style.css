@@ -1,0 +1,53 @@
+ /* Стили для мобильных устройств */
+@media (max-width: 767px) {
+  body {
+    background-image: url("background.jpg"); /* замените "background.jpg" на путь к вашему заднему фону */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transform: scale(1); /* Значение 1 означает 100% масштаб */
+    transform-origin: top center; /* Устанавливает точку масштабирования в верхний левый угол */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+}
+
+/* Стили для десктопов */
+@media (min-width: 768px) {
+  body {
+    background-image: url("background.jpg"); /* замените "background.jpg" на путь к вашему заднему фону */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transform: scale(1); /* Значение 1 означает 100% масштаб */
+    transform-origin: top center; /* Устанавливает точку масштабирования в верхний левый угол */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+}
+
+  .ComputerPlaceHolder {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .ComputerPlaceHolder:hover {
+    opacity: 0.8;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
