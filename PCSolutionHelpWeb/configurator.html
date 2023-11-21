@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Конфигуратор</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="icon" href="assets/images/comp.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="assets/images/comp.ico" type="image/x-icon">
+        <script src="assets/scripts/transform-function.js"></script>
+        <script src="assets/scripts/context-menu.js"></script>
+        <script src="assets/scripts/container.js"></script>
+
+        <style>
+            .MainWindow{
+                background-color: #171717;
+                position: fixed;
+                width: 100vw;
+                height: 400vh;
+            }
+
+            .WelcomeText{
+                width: 700px;
+                text-align: center;
+                color: white;
+                font-size: 36px;
+                font-family: "aksharlight";
+                font-weight: 700;
+                word-wrap: break-word;
+                position: fixed;
+                top: 140px;
+                left: 33%;
+                text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+            }
+
+            .Mainnav {
+                width: 100vw;
+                height: 130px;
+                background: rgba(0, 145, 155, 0.993);
+            }
+
+            
+            .Bottomnav {
+                width: 100vw;
+                height: 1px;
+                list-style-type: none;
+                list-style-position: inside;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: -50px;
+                margin-left: 33%;
+            }
+
+            .Bottomnav ul {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0;
+            }
+
+            .Bottomnav li a:hover {
+                color: white;
+            }
+
+            .Mainnav a:hover {
+                color: white;
+            }
+
+            .Bottomnav li {
+                margin: 0 10px;
+                font-family: "Akshar";
+                font-size: 24px;
+                font-weight: 700;
+                list-style-type: none;
+                margin-right: 15px;
+                text-align: right;
+            }
+
+            .Line {
+                width: 100vw;
+                height: 0px;
+                top: 46px;
+                position: fixed;
+                border: 2px white solid;
+            }
+
+            .ContactLink {
+                position: fixed;
+                top: 15px;
+                right: 115px;
+                width: 110px;
+                height: 30px;
+                color: black;
+                font-size: 22px;
+                font-family: "Akshar";
+                font-weight: 700;
+                word-wrap: break-word;
+            }
+
+            .AboutLink {
+                position: fixed;
+                top: 15px;
+                right: 0;
+                width: 100px;
+                height: 30px;
+                color: black;
+                font-size: 22px;
+                font-family: "Akshar";
+                font-weight: 700;
+                word-wrap: break-word;
+            }
+
+            .Logo1 {
+                position: absolute;
+                width: 250px;
+                height: 75px;
+                left: 10px;
+                top: 55px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .logo-link {
+                display: inline-block;
+                max-width: 100%;
+                max-height: 100%;
+            }   
+
+
+            #myButton {
+                position: relative;
+                left: 16px;
+                top: -18px;
+                background-color: #008F99;
+                color: rgb(255, 255, 255);
+                font-size: 18px;
+                font-family: "Akshar";
+                font-weight: 700;
+                padding: 8px 16px;
+                border: none;
+                border-left: solid 2px white;
+                border-right: solid 2px white;
+                cursor: pointer;
+                transition: 500ms;
+            }
+
+            #myButton:hover {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            #contextMenu {
+                display: none;
+                position: absolute;
+                left: 10px;
+                top: 50px;
+                background-color: rgba(0, 143, 153, 0.8);
+                min-width: 160px;
+                max-width: 250px;
+                padding: 12px 16px;
+                border-radius: 10%;
+                border: solid 1px white;
+            }
+
+            #contextMenu a {
+                color: rgb(255, 255, 255);
+                padding: 8px 0;
+                display: block;
+                transition: 500ms;
+            }
+
+            #contextMenu a:hover {
+                background-color: rgb((0, 2, 145), 241, 241);
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .CPUblock {
+                background: #008F99;
+                width: 400px;
+                height: 400px;
+                position: absolute;
+                top: 250px;
+                left: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 20px;
+                border: white solid 7px;
+            }
+
+            .CPUblock a {
+                font-size: 22px;
+                font-family: "aksharlight";
+                margin: 10px;
+                text-align: center;
+                color: black;
+            }
+
+            .cpuimg {
+                position: relative;
+                width: 700px;
+                height: 100%;
+                min-width: 120px;
+                min-height: 120px;
+                max-width: 300px;
+                max-height: 300px;
+            }
+
+            .hidden-container {
+                position: absolute;
+                top: -6px;
+                left: 399px;
+                width: 900px;
+                height: 380px;
+                background-color: #171717;
+                display: none;
+                padding: 10px;
+                border: white 7px solid;
+                border-radius: 10px;
+                text-align: center;
+                color: white;
+                font-family: "aksharlight";
+                font-size: 24px;
+            }
+
+            .hidden-container p{
+                text-align: center;
+                color: white;
+                font-family: "aksharlight";
+                font-size: 24px;
+            }
+
+            .hidden-container a{
+                text-align: center;
+                color: white;
+                font-family: "aksharlight";
+                font-size: 24px;
+                top: 50px;
+                margin: 50px;
+            }
+
+            .content-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            
+            .content-container p {
+                text-align: center;
+                color: white;
+                font-family: "aksharlight";
+                font-size: 18px;
+            }
+
+            .listcontainer{
+                color: black;
+            }
+
+            .listcontainer li{
+                text-align: left;
+                margin-bottom: 10px;
+                margin-left: 270px;
+            }
+            
+            .listcontainer li a:hover{
+                color: #008F99;
+            }
+
+            .processorOption{
+                position: absolute;
+                display: none;
+            }
+
+            .hidden-container a:hover{
+                color: #008F99;
+            }
+        
+            .CPUContainer {
+                display: none;
+            }
+
+            .CPUContainer.active {
+                display: block;
+            }
+
+            .listcontainer li a.active::after {
+                content: '\2713';
+                margin-left: 5px;
+            }
+
+            .GPUblock{
+                background: #008F99;
+                width: 400px;
+                height: 400px;
+                position: absolute;
+                top: 800px;
+                left: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 20px;
+                border: white solid 7px;
+            }
+
+            .GPUblock a {
+                font-size: 22px;
+                font-family: "aksharlight";
+                margin: 10px;
+                text-align: center;
+                color: black;
+            }
+
+            .gpuimg {
+                position: relative;
+                width: 700px;
+                height: 100%;
+                min-width: 120px;
+                min-height: 120px;
+                max-width: 300px;
+                max-height: 300px;
+            }
+
+            .GPUcontent-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .GPUcontent-container p {
+                text-align: center;
+                color: white;
+                font-family: "aksharlight";
+                font-size: 18px;
+            }
+
+            .GPUhidden-container {
+                position: absolute;
+                top: -6px;
+                left: 399px;
+                width: 900px;
+                height: 380px;
+                background-color: #171717;
+                display: none;
+                padding: 10px;
+                border: white 7px solid;
+                border-radius: 10px;
+                text-align: center;
+                color: white;
+                font-family: "aksharlight";
+                font-size: 24px;
+            }
+
+            .GPUhidden-container p {
+                text-align: center;
+                color: white;
+                font-family: "aksharlight";
+                font-size: 24px;
+            }
+
+            .GPUhidden-container a {
+                text-align: center;
+                color: white;
+                font-family: "aksharlight";
+                font-size: 24px;
+                top: 50px;
+                margin: 50px;
+            }
+
+            .GPUContainer {
+                display: none;
+            }
+
+            .GPUContainer.active {
+                display: block;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="MainWindow">
+            <a class="WelcomeText">Конфигуратор</a>
+            <div class="Mainnav">
+                <div class="Line"></div>
+                <a href="contacts.html" class="ContactLink">Контакты</a>
+                <a href="aboutus.html" class="AboutLink">О нас</a>
+                <div class="Logo">
+                  <a href="Index.html" class="logo-link">
+                    <img class="Logo1" src="assets/images/PClogo.png">
+                  </a>
+                </div>
+                <button id="myButton" onclick="toggleContextMenu(event)">меню</button>
+                <div id="contextMenu">
+                  <a href="#">Личный кабинет</a>
+                  <a href="#">Ваши сборки</a>
+                  <a href="#">Третий пункт</a>
+                </div>
+              </div>
+              <div class="Bottomnav">
+                <ul>
+                  <li><a href="newspage.html">Новости</a></li>
+                  <li><a href="https://vk.com/pcsolutionweb">Группа Вконтакте</a></li>
+                  <li><a href="Index.html">Главная Страница</a></li>
+                </ul>
+              </div>
+              <div class="CPUblock">
+                <a class="CPUtext">Тут вы можете выбрать подходящий процессор для вашего будущего компьютера</a>
+                <img class="cpuimg" src="assets/images/cpu.png" alt="CPU Image">
+                <div class="content-container">
+                  <p>Нажмите чтобы выбрать процессор</p>
+                  <div class="hidden-container">
+                    <p>Процессоры</p>
+                    <a class="processor-option" data-processor="intel" onclick="handleClick(this)">Intel</a>
+                    <a class="processor-option" data-processor="amd" onclick="handleClick(this)">AMD</a>
+                    <div class="CPUContainer" id="intelContainer">
+                      <ul class="listcontainer">
+                        <li><a onclick="handleClick(this)">intel Core i5 10400f</a></li>
+                        <li><a onclick="handleClick(this)">intel Core i3-1115g4</a></li>
+                        <li><a onclick="handleClick(this)">intel Core i7-13700k</a></li>
+                      </ul>
+                    </div>
+                    <div class="CPUContainer" id="amdContainer">
+                      <ul class="listcontainer">
+                        <li><a onclick="handleClick(this)">Ryzen 5 3600X</a></li>
+                        <li><a onclick="handleClick(this)">Ryzen 3 1600</a></li>
+                        <li><a onclick="handleClick(this)">Ryzen 9 7950X</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="GPUblock">
+                <a class="CPUtext">Тут вы можете выбрать подходящую видеокарту для вашего будущего компьютера</a>
+                <img class="cpuimg" src="assets/images/gpu.png" alt="GPU Image">
+                <div class="GPUcontent-container">
+                  <p>Нажмите чтобы выбрать видеокарту</p>
+                  <div class="GPUhidden-container">
+                    <p>Видеокарты</p>
+                    <a class="gpu-option" data-gpu="nvidia" onclick="handleClick(this)">Nvidia</a>
+                    <a class="gpu-option" data-gpu="amd" onclick="handleClick(this)">AMD</a>
+                    <div class="GPUContainer" id="nvidiaContainer">
+                      <ul class="listcontainer">
+                        <li><a onclick="handleClick(this)">Nvidia GeForce RTX 3080</a></li>
+                        <li><a onclick="handleClick(this)">Nvidia GeForce RTX 3070</a></li>
+                        <li><a onclick="handleClick(this)">Nvidia GeForce RTX 3060</a></li>
+                      </ul>
+                    </div>
+                    <div class="GPUContainer" id="amdContainer">
+                      <ul class="listcontainer">
+                        <li><a onclick="handleClick(this)">AMD Radeon RX 6800 XT</a></li>
+                        <li><a onclick="handleClick(this)">AMD Radeon RX 6700 XT</a></li>
+                        <li><a onclick="handleClick(this)">AMD Radeon RX 6600 XT</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <script>
+                function handleClick(element) {
+                const option = element.textContent;
+                const container = element.parentNode.parentNode;
+                
+                console.log(option);
+                
+                const allOptions = container.querySelectorAll('.listcontainer li a');
+                allOptions.forEach(function(btn) {
+                    btn.classList.remove('active');
+                });
+                element.classList.add('active');
+                
+                const allListItems = container.querySelectorAll('.listcontainer li');
+                allListItems.forEach(function(item) {
+                    item.classList.remove('checked');
+                });
+                element.parentNode.classList.add('checked');
+                }
+              </script>
+        </div> 
+    </body>
+</html>
