@@ -15,261 +15,269 @@
     };
     </script>
   <style>
-    .Mainwindow {
-      width: 100vw;
-      height: 160vh;
-      position: fixed;
-      background: #171717;
-    }
 
-    .WelcomeText {
-      width: 700px;
+@media (max-width: 670px){
+
+  .WelcomeTextContainer {
+      position: absolute;
+      margin-top: 42%;
+      left: 0;
+      width: 100%;
+      height: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       color: white;
-      font-size: 36px;
+      font-size: 3vw;
       font-family: "aksharlight";
       font-weight: 700;
-      word-wrap: break-word;
-      position: absolute;
-      top: 140px;
-      left: 30%;
       text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     }
 
-    .First-rectangle {
-      position: fixed;
-      width: 1200px;
-      height: 374px;
-      left: 0px;
-      top: 200px;
-      background-color: rgba(0, 145, 155, 0.993);
-      overflow: hidden;
-      border-radius: 20px;
-      border: 7px solid white;
-    }
-
-    .Second-rectangle {
-      position: fixed;
-      width: 1200px;
-      height: 374px;
-      right: 0px;
-      top: 650px;
-      background-color: rgba(0, 145, 155, 0.993);
-      overflow: hidden;
-      border-radius: 20px;
-      border: 7px solid white;
-    }
-    
-    .InfoText{
-      width: 100%;
-      text-align: justify;
+  .InfoText {
+      flex: 1;
+      margin-left: 0%;
+      text-align: center;
       color: white;
-      font-size: 24px;
-      font-weight: 700px;
+      font-size: 2vw; 
+      font-weight: 700;
       font-family: "aksharlight";
       word-wrap: break-word;
-      position: relative;
-      left: 750px;
+      margin-top: -31%;
     }
 
-    .InfoBottomText{
-      position: fixed;
+    .InfoBottomText {
+      flex: 1;
+      margin-left: 4%;
       color: white;
-      font-size: 24px;
+      font-size: 3vw; 
+      font-weight: 300;
       font-family: "aksharlight";
-      left: 500px;
-      text-align: center;
-    }
-
-    .Second-rectangle p{
-      color: white;
-      font-family: "aksharlight";
-      font-size: 24px;
-      text-align: center;
-      margin-right: 400px;
-    }
-
-    .configtext{
-      position: fixed;
-      max-width: 700px;
-      text-align: center;
-      color: white;
-      font-size: 24px;
-      font-weight: 700px;
-      font-family: "aksharlight";
-      right: 450px;
-      top: 760px;
-    }
-
-    .slider {
-      background-color: #171717;
-      position: absolute;
-      width: 400px;
-      height: 376px;
+      word-wrap: break-word;
       overflow: hidden;
-      display: inherit;
-      margin-top: 56px;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border: 6px solid white;
-      border-radius: 20px; 
-  }
-
-    .middle {
-      position: absolute;
-      top: 35%;
-      left: 202px;
-      transform: translate(-50%, -50%);
+      float: left;
+      text-align: center;
+      margin-top: -1%;
     }
 
-    .navigation {
+    .cfgblock {
       position: fixed;
-      bottom: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-    }
-
-    .bar {
-      position: relative;
-      bottom: 15px;
-      height: 8px;
-      width: 30px;
-      margin: 6px;
-      cursor: pointer;
-      background-color: #ddd;
-      opacity: .7;
-      border-radius: 10px;
-      transition: all .4s ease;
-    }
-
-    .bar:hover {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-
-    input[name="r"] {
-      position: fixed;
-      visibility: hidden;
-    }
-
-    .slides {
-      width: 400%;
-      height: 100%;
-      display: flex;
-      position: relative;
-    }
-
-    .slide {
-      width: 25%;
-      transition: all .6s ease;
-      display: flex;
-      justify-content: center;
-      position: relative;
-    }
-
-    .slide img {
       width: 80%;
-      height: 60%;
-      margin-top: 15%;
-      margin-left: 10px;
+      max-width: 1200px;
+      max-height: 500px;
+      margin-top: 130%;
+      right: 7%;
+      background-color: rgba(0, 145, 155, 0.993);
+      overflow: hidden;
+      border-radius: 20px;
+      border: 7px solid white;
     }
-
-    #r1:checked ~ .s1 {
-      margin-left: 0;
-    }
-
-    #r2:checked ~ .s1 {
-      margin-left: -25%;
-    }
-
-    #r3:checked ~ .s1 {
-      margin-left: -50%;
-    }
-
-    #r4:checked ~ .s1 {
-      margin-left: -75%;
-    }
-
-    .slide-content {
-      position: absolute;
-      bottom: 20px;
-      width: 270px;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 5px;
-      border-radius: 40px;
-    }
-
-    .PcDesc{
+    .newsblock p,
+    .cfgblock p {
+      font-size: 4vw;
+      text-align: center;
       color: white;
-      font-size: 20px;
+      font-weight: 700;
+      margin-top: 50%;
+    }
+    .newsblockbottomtext,
+    .InfoBottomTextCfg{
+      font-size: 3vw;
+      text-align: center;
+      color: white;
+      margin-top: 0%;
+      max-width: 500px;
+      display: block;
+      width: 70%;
+      padding-left: 15% ;
+    }
+    .newsimg,
+    .cfgimg {
+      width: 50%;
+      max-width: 1200px;
+      height: auto;
+      max-height: 400px;
+      float: right;
+      position: absolute;
+      top: 0%;
+      left: 22%;
+    }
+
+    .newsblock {
+      position: fixed;
+      width: 80%;
+      max-width: 1200px;
+      max-height: 400px;
+      margin-top: 215%;
+      left: 10%;
+      background-color: rgba(0, 145, 155, 0.993);
+      overflow: hidden;
+      border-radius: 20px;
+      border: 7px solid white;
+    }
+
+}
+
+@media (min-width: 670px){
+
+
+  .mobile-only {
+    display: none;
+  }
+  .InfoText {
+      flex: 1;
+      margin-left: 50%;
+      text-align: center;
+      color: white;
+      font-size: 2vw; 
+      font-weight: 700;
+      font-family: "aksharlight";
+      margin-bottom: 5%;
+    }
+
+    .InfoBottomText {
+      position: relative;
+      flex: 1;
+      margin-left: 54%;
+      color: white;
+      font-size: 2vw; 
+      font-weight: 300;
+      font-family: "aksharlight";
+      word-wrap: break-word;
+      overflow: hidden;
+      float: left;
+      text-align: center;
+    }
+
+      .WelcomeTextContainer {
+      position: absolute;
+      top: 110%;
+      left: 0;
+      width: 100%;
+      height: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      font-size: 3vw;
       font-family: "aksharlight";
       font-weight: 700;
-      text-align: center;
-    }
-    .ConfigPic{
-      position: absolute;
-      right: -15px;
-      top: -15px;
-    }
-    .ConfigPic img{
-      width: 400px;
-      height: 450px;
-      border-radius: 10%;
+      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     }
 
-    .newsblock{
+
+    .cfgblock {
       position: fixed;
-      width: 1200px;
-      height: 374px;
-      top: 1100px;
-      left: 0px;
-      background-image: linear-gradient(to left, #005499, #008F99);
-      font-family: "aksharlight";
-      border: solid 4px white;
+      width: 80%;
+      height: 100%;
+      max-width: 1200px;
+      max-height: 400px;
+      top: 700px;
+      right: 0%;
+      background-color: rgba(0, 145, 155, 0.993);
+      overflow: hidden;
       border-radius: 20px;
+      border: 7px solid white;
     }
 
-    .newsblock p{
-      font-size: 24px;
+    .cfgblock p {
+      font-size: 2vw;
       text-align: center;
       color: white;
+      font-weight: 700;
+      margin-bottom: 5%;
     }
 
-
-    .newsblock a{
-      position: fixed;
-      font-size: 24px;
-      text-align: justify;
+    .cfgblock a {
+      font-size: 1.5vw;
+      text-align: center;
       color: white;
-      left: 360px;
+      max-width: 500px;
+      display: block;
+      width: 45%;
+      padding-left: 53% ;
     }
-    
-    .newsimg{
+
+    .cfgimg {
+      width: 50%;
+      max-width: 1200px;
+      height: 100%;
+      max-height: 400px;
+      float: right;
+      position: absolute;
+      bottom: 0%;
+      left: 0%;
+    }
+
+    .newsblock {
       position: fixed;
-      left: 0px;
-      top: 1130px;
+      width: 80%;
+      height: 100%;
+      max-width: 1200px;
+      max-height: 400px;
+      top: 1200px;
+      left: 0%;
+      background-color: rgba(0, 145, 155, 0.993);
+      overflow: hidden;
+      border-radius: 20px;
+      border: 7px solid white;
     }
+
+    .newsblock p {
+      font-size: 2vw;
+      text-align: center;
+      color: white;
+      font-weight: 700;
+      margin-bottom: 5%;
+    }
+
+    .newsblock a {
+      font-size: 2vw;
+      text-align: center;
+      color: white;
+      max-width: 500px;
+      display: block;
+      width: 45%;
+      padding-left: 50% ;
+    }
+
+    .newsimg {
+      width: 50%;
+      max-width: 1200px;
+      height: 100%;
+      max-height: 400px;
+      float: right;
+      position: absolute;
+      bottom: 0%;
+      left: 0%;
+    }
+}
+
+   
 
   </style>
 </head>
 <body>
-  <div class="Mainwindow">
-    <div class="Mainnav">
-      <div class="Line"></div>
+<div class="Mainnav">
+  <div class="WelcomeTextContainer">Наши авторские компьютерные решения</div>
+    <div class="Line"></div>
       <a href="contacts.html" class="ContactLink">Контакты</a>
       <a href="aboutus.html" class="AboutLink">О нас</a>
       <div class="Logo">
         <a href="Index.html" class="logo-link">
           <img class="Logo1" src="assets/images/PClogo.png">
         </a>
-      </div>
+    </div>
       <button id="myButton" onclick="toggleContextMenu(event)">меню</button>
       <script src="assets/scripts/context-menu.js"></script>
       <div id="contextMenu">
         <a href="#">Личный кабинет</a>
         <a href="#">Ваши сборки</a>
-        <a href="#">Третий пункт</a>
+        <a href="configurator.html" class="mobile-only">Конфигуратор</a>
+        <a href="newspage.html" class="mobile-only">Новости</a>
+        <a href="https://vk.com/pcsolutionweb" class="mobile-only">Группа Вконтакте</a>
       </div>
     </div>
     <div class="Bottomnav">
@@ -278,67 +286,66 @@
         <li><a href="https://vk.com/pcsolutionweb">Группа Вконтакте</a></li>
         <li><a href="configurator.html">Конфигуратор</a></li>
       </ul>
-    </div>
-    <div class="WelcomeText">Наши авторские компьютерные решения</div>
-  <div class="First-rectangle">
-    <p class="InfoText">Сборки</p>
-    <a class="InfoBottomText">У нас вы можете как составить свою собственную сборку<br>так и приобрести уже готовую сборку от нас</a>
-    <div class="slider middle">
-      <div class="slides">
-        <input type="radio" name="r" id="r1" checked>
-        <input type="radio" name="r" id="r2">
-        <input type="radio" name="r" id="r3">
-        <input type="radio" name="r" id="r4">
-        <div class="slide s1">
-          <img src="assets/images/ComputerPlaceHolder.png" a href="https://example.com"></a>
-          <div class="slide-content">
-            <p class="PcDesc">Офисное решение</p>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="assets/images/ComputerPlaceHolder.png" alt="">
-          <div class="slide-content">
-            <p class="PcDesc">Решение для дома</p>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="assets/images/ComputerPlaceHolder.png" alt="">
-          <div class="slide-content">
-            <p class="PcDesc">Профессиональное решение</p>
-          </div>
-        </div>
-        <div class="slide">
-          <img src="assets/images/ComputerPlaceHolder.png" alt="">
-          <div class="slide-content">
-            <p class="PcDesc">Решение для Игр</p>
-          </div>
-        </div>
-      </div>
-      <div class="navigation">
-        <label for="r1" class="bar"></label>
-        <label for="r2" class="bar"></label>
-        <label for="r3" class="bar"></label>
-        <label for="r4" class="bar"></label>
-      </div>
-      <div class="prev-next">
-        <label for="r1" class="prev"></label>
-        <label for="r4" class="next"></label>
-      </div>
-    </div>
-    </div>
-  <div class="Second-rectangle">
-    <div class="ConfigPic"><a href="configurator.html"><img src="assets/images/configurator.png"></img></a>
-    </div>
-    <p>Конфигуратор</p>
-    <a class="configtext">Наш Сайт предлагает вам возможность создать свою конфигурацию компьютера под ваши нужды. В вашем распоряжении будет удобный инструментарий, который подберет только совместимые комплектующие</a>
   </div>
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slides">
+          <input type="radio" name="r" id="r1" checked>
+          <input type="radio" name="r" id="r2">
+          <input type="radio" name="r" id="r3">
+          <input type="radio" name="r" id="r4">
+          <div class="slide s1">
+            <img src="assets/images/ComputerPlaceHolder.png" alt="">
+            <div class="slide-content">
+              <p class="PcDesc">Описание слайда 1</p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="assets/images/ComputerPlaceHolder.png" alt="">
+            <div class="slide-content">
+              <p class="PcDesc">Описание слайда 2</p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="assets/images/ComputerPlaceHolder.png" alt="">
+            <div class="slide-content">
+              <p class="PcDesc">Описание слайда 3</p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="assets/images/ComputerPlaceHolder.png" alt="">
+            <div class="slide-content">
+              <p class="PcDesc">Описание слайда 4</p>
+            </div>
+          </div>
+        </div>
+        <div class="navigation">
+          <label for="r1" class="bar"></label>
+          <label for="r2" class="bar"></label>
+          <label for="r3" class="bar"></label>
+          <label for="r4" class="bar"></label>
+        </div>
+      </div>
+      <p class="InfoText">Сборки</p>
+      <a class="InfoBottomText">У нас вы можете как составить свою собственную сборку <br>так и приобрести уже готовую сборку от нас</a>
+    </div>
+
+    <div class="cfgblock">
+      <p class="InfoText">Конфигуратор</p>
+      <a class="InfoBottomTextCfg">Наш Сайт предлагает вам возможность создать свою конфигурацию компьютера под ваши нужды.<br> В вашем распоряжении будет удобный инструментарий, который подберет только совместимые комплектующие</a>
+      <a href="configurator.html">
+        <img class="cfgimg" src="assets/images/Configurator.png" alt="Описание изображения">
+      </a>
+  </div>
+
     <div class="newsblock">
-      <p>Новости</p>
-      <a>На нашем сайте вы можете узнать последние новости о компьютерном железе <br> они находятся в разделе новостей</a>
+      <p class="InfoText">Новости</p>
+      <a class="newsblockbottomtext">На нашем сайте вы можете узнать последние новости о компьютерном железе <br> они находятся в разделе новостей</a>
       <a href="newspage.html">
         <img class="newsimg" src="assets/images/news.png" alt="Описание изображения">
       </a>
-    </div>
   </div>
+</div>
+</div>
 </body>
 </html>
